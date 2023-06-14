@@ -128,6 +128,12 @@ export function HomeBackground({ children }: ProviderProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => { setIsLoading(false); }, 3000);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   if (isLoading) return null;
 
   return (
