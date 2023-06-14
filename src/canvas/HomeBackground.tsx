@@ -37,7 +37,7 @@ interface ProviderProps {
 
 export function HomeBackground({ children }: ProviderProps) {
   const [pages, setPages] = useState(0);
-  const { setIsLoading } = useLoading();
+  const { isLoading, setIsLoading } = useLoading();
 
   const onLoad = () => {
     if (window.screen.availWidth >= 768 && window.screen.availWidth < 1024) {
@@ -128,7 +128,7 @@ export function HomeBackground({ children }: ProviderProps) {
 
   setTimeout(() => { setIsLoading(false); }, 3000);
 
-  if (!pages) return null;
+  if (isLoading) return null;
 
   return (
 
