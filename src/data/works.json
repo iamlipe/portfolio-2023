@@ -1,0 +1,38 @@
+[
+  {
+    "title": "macro-diet",
+    "short_description": "Macro Diet is a mobile app that helps users track and manage their daily calorie intake.",
+    "description": "Macro Diet is a mobile application developed in TypeScript and React Native that aims to assist users in monitoring their daily caloric intake and water consumption, as well as tracking weight and body fat percentage evolution. Based on the user-provided data, the application is capable of calculating the amount of calories the user should consume to achieve their goal.",
+    "logo": "https://i.imgur.com/L4p76AU.png",
+    "tecnologies": ["typescript", "react-native", "firebase", "clean-code", "zustand"],
+    "repo": "https://github.com/iamlipe/macro-diet",
+    "url": null
+  },
+  {
+    "title": "take-orders",
+    "short_description": "Track and manage all aspects of your business with this ideal app for bars, restaurants, and cafes.",
+    "description": "Revolutionize your bar, restaurant, or cafe with our all-in-one app. Effortlessly manage reservations, seating, and ingredient tracking. Streamline staff scheduling and tasks for seamless operations. Make data-driven decisions with detailed analytics. Boost customer engagement with personalized promotions and mobile ordering. Elevate your business with our powerful, user-friendly app.",
+    "logo": "https://i.imgur.com/E82fvYg.png",
+    "tecnologies": ["typescript", "react-native", "redux-toolkit", "redux-saga", "watermelondb", "i18n"],
+    "repo": "https://github.com/iamlipe/takeorders-mobile",
+    "url": "https://play.google.com/store/apps/details?id=com.takeorders"
+  },
+  {
+    "title": "chat-messaging",
+    "short_description": "A web chat app enables real-time communication through text-based messaging, connecting users worldwide for conversations, collaboration, and socializing.",
+    "description": "Connect and communicate effortlessly with our innovative web chat app. Experience real-time text-based messaging that brings users from around the globe together for conversations, collaborative efforts, and social interactions. Engage, connect, and foster meaningful relationships through our user-friendly and interactive platform, enhancing your online communication experience for work or leisure. Join our web chat community and unlock the power of seamless connectivity.",
+    "logo": "https://i.imgur.com/ZxzzBsz.png",
+    "tecnologies": ["typescript", "next.js", "redis", "tailwind-css", "next-auth"],
+    "repo": "https://github.com/iamlipe/chat-messaging",
+    "url": null
+  },
+  {
+    "title": "cestou",
+    "short_description": "Cestou is an app that aims to promote food awareness and provide easy access to healthy and sustainable eating for all.",
+    "description": "The project proposed in the 4th edition of CAMP Ioasys aimed to develop a digital solution for SDG 2 (Sustainable Development Goal) which aims to eradicate hunger, achieve food security, improve nutrition, and promote sustainable agriculture.",
+    "logo": "https://i.imgur.com/lucqPqj.png",
+    "tecnologies": ["react-native", "styled-components", "axios", "jest", "detox"],
+    "repo": "https://github.com/iamlipe/cestou",
+    "url": null
+  }
+]

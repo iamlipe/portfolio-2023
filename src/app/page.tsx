@@ -1,113 +1,69 @@
-import Image from 'next/image'
+import { HomeBackground } from '@/canvas/HomeBackground';
+import { Card } from '@/components/Card';
+import { ScrollAnimate } from '@/components/ScrollAnimate';
+import { Link } from '@/components/ui/Link';
+import works from '../data/works.json';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <HomeBackground>
+      <section className="absolute w-[200vw] h-screen pt-32 pb-24">
+        <div className="relative w-full h-full">
+          <h2 id="about" className="absolute w-[95vw] top-0 left-2 md:left-8 lg:left-16 text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-wider leading-tight font-thin">
+            {'HI 👋, MY NAME IS FELIPE AND I\'M A MOBILE DEVOLPER FROM BRAZIL, PASSIONATED ABOUT CREATING MEMORABLE PROJECTS'}
+          </h2>
+
+          <p className="absolute bottom-0 left-[90vw] w-[90vw] text-2xl lg:text-4xl xl:text-5xl uppercase tracking-wider leading-tight font-thin">
+            {'I am a mobile developer specialized in React Native, constantly seeking learning and professional growth in creating high-quality applications for iOS and Android.'}
+          </p>
+
+          <p className="absolute top-0 left-[110vw] w-[85vw] text-3xl lg:text-5xl xl:text-6xl text-end uppercase tracking-wider leading-tight font-thin">
+            {'I always strive to learn and apply new tools and techniques to provide innovative solutions to clients and enhance the end-user experience.'}
+          </p>
+
         </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <div className="absolute bottom-24 left-2 md:left-8 lg:left-16 w-12 h-12 md:w-24 md:h-24 lg:w-32 lg:h-32 -rotate-90 flex justify-center items-center">
+          <ScrollAnimate />
+        </div>
+      </section>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
+      <section
+        id="work"
+        className="absolute flex gap-4 md:gap-20 lg:gap-24 w-[300vw] md:w-[200vw] lg:w-[100vw] h-screen left-[200vw] pt-32 pb-4 px-6"
+      >
+        {works.map((work, index) => (
+          <Card
+            href={`/work/details/${index}`}
+            index={index}
+            image={`/${index + 1}.png`}
+            title={work.title}
+            description={work.short_description}
+          />
+        ))}
+      </section>
+
+      <section className="flex flex-col justify-between absolute w-[100vw] h-screen left-[500vw] md:left-[400vw] lg:left-[300vw] pl-[5vw] pt-32 pb-24">
+        <div>
+          <p id="talk" className="text-5xl md:text-7xl xl:text-8xl w-[90vw] text-end mb-8 font-light">
+            {'LET\'S CREATE SOMETHING AWESOME TOGETHER'}
           </p>
-        </a>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
+          <p className="text-xl md:text-2xl xl:text-3xl w-[90vw] uppercase items-end font-extralight">
+            {'Once you free your mind about a concept of harmony and of design being correct you can do whatever you want. Drop me an email to make your project a memorable experience.'}
           </p>
-        </a>
+        </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
+        <div className="flex w-[90vw] justify-between">
+          <Link className="text-2xl" href="mailto:iamfelipelima10@gmail.com" title="Contact me →" />
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+          <div className="flex flex-col items-end">
+            <Link href={'https://www.linkedin.com/in/iamfelima/'} title={'LINKEDIN'} target="_blank" />
+            <Link href={'https://github.com/iamlipe'} title={'GITHUB'} target="_blank" />
+            <Link href={'https://twitter.com/iam_felima'} title={'TWITTER'} target="_blank" />
+          </div>
+        </div>
+      </section>
+    </HomeBackground>
+  );
 }
