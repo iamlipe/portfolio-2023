@@ -27,7 +27,7 @@ export function Link({ href, title, onMouseEnter, onMouseLeave, className, ...re
   return (
     <div className="flex flex-col">
       <a
-        className={cn('uppercase text-lg', className)}
+        className={cn('uppercase text-lg text-slate-800', className)}
         href={href}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}

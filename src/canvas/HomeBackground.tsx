@@ -36,7 +36,7 @@ interface ProviderProps {
 }
 
 export function HomeBackground({ children }: ProviderProps) {
-  const [pages, setPages] = useState(4);
+  const [pages, setPages] = useState(0);
   const { isLoading, setIsLoading } = useLoading();
 
   const onLoad = useCallback(() => {
@@ -113,23 +113,25 @@ export function HomeBackground({ children }: ProviderProps) {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      window.addEventListener('load', onLoad);
+      onLoad();
+
       window.addEventListener('resize', resize);
 
       return function unMount() {
-        window.removeEventListener('load', onLoad);
         window.removeEventListener('resize', resize);
       };
     }
 
     return undefined;
-  }, [onLoad, resize]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
-    if (isLoading) { setTimeout(() => { setIsLoading(false); }, 3000); }
-  }, [isLoading, setIsLoading]);
+    setTimeout(() => { setIsLoading(false); }, 3000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  if (isLoading) return null;
+  if (isLoading || !pages) return null;
 
   return (
 

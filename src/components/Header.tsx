@@ -45,7 +45,7 @@ function OverflowMobileMenu({ animate, setAnimate }: OverflowMobileMenuProps) {
               <a
                 href="#about"
                 onClick={() => setAnimate(false)}
-                className="uppercase text-3xl font-light leading-loose tracking-widest"
+                className="uppercase text-3xl font-light leading-loose tracking-widest text-slate-800"
               >
                 Aboute me
               </a>
@@ -54,7 +54,7 @@ function OverflowMobileMenu({ animate, setAnimate }: OverflowMobileMenuProps) {
               <a
                 href="#work"
                 onClick={() => setAnimate(false)}
-                className="uppercase text-3xl font-light leading-loose tracking-widest"
+                className="uppercase text-3xl font-light leading-loose tracking-widest text-slate-800"
               >
                 Work
               </a>
@@ -63,7 +63,7 @@ function OverflowMobileMenu({ animate, setAnimate }: OverflowMobileMenuProps) {
               <a
                 href="#talk"
                 onClick={() => setAnimate(false)}
-                className="uppercase text-3xl font-light leading-loose tracking-widest"
+                className="uppercase text-3xl font-light leading-loose tracking-widest text-slate-800"
               >
                 Let`s Talk
               </a>
@@ -128,21 +128,21 @@ export function Header() {
               <ul className="flex gap-6">
                 <li>
                   <Link
-                    className="text-base md:text-lg lg:text-xl font-extralight"
+                    className="text-base md:text-lg lg:text-xl font-extralight text-slate-800"
                     href="#about"
                     title="About me"
                   />
                 </li>
                 <li>
                   <Link
-                    className="text-base md:text-lg lg:text-xl font-extralight"
+                    className="text-base md:text-lg lg:text-xl font-extralight text-slate-800"
                     href="#work"
                     title="Work"
                   />
                 </li>
                 <li>
                   <Link
-                    className="text-base md:text-lg lg:text-xl font-extralight"
+                    className="text-base md:text-lg lg:text-xl font-extralight text-slate-800"
                     href="#talk"
                     title={"Let's talk"}
                   />

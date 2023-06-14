@@ -9,15 +9,15 @@ export default function Home() {
     <HomeBackground>
       <section className="absolute w-[200vw] h-screen pt-32 pb-24">
         <div className="relative w-full h-full">
-          <h2 id="about" className="absolute w-[95vw] top-0 left-2 md:left-8 lg:left-16 text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-wider leading-tight font-thin">
+          <h2 id="about" className="absolute w-[95vw] top-0 left-2 md:left-8 lg:left-16 text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-wider leading-tight font-thin text-slate-800">
             {'HI 👋, MY NAME IS FELIPE AND I\'M A MOBILE DEVOLPER FROM BRAZIL, PASSIONATED ABOUT CREATING MEMORABLE PROJECTS'}
           </h2>
 
-          <p className="absolute bottom-0 left-[90vw] w-[90vw] text-2xl lg:text-4xl xl:text-5xl uppercase tracking-wider leading-tight font-thin">
+          <p className="absolute bottom-0 left-[90vw] w-[90vw] text-2xl lg:text-4xl xl:text-5xl uppercase tracking-wider leading-tight font-thin text-slate-800">
             {'I am a mobile developer specialized in React Native, constantly seeking learning and professional growth in creating high-quality applications for iOS and Android.'}
           </p>
 
-          <p className="absolute top-0 left-[110vw] w-[85vw] text-3xl lg:text-5xl xl:text-6xl text-end uppercase tracking-wider leading-tight font-thin">
+          <p className="absolute top-0 left-[110vw] w-[85vw] text-3xl lg:text-5xl xl:text-6xl text-end uppercase tracking-wider leading-tight font-thin text-slate-800">
             {'I always strive to learn and apply new tools and techniques to provide innovative solutions to clients and enhance the end-user experience.'}
           </p>
 
@@ -45,11 +45,11 @@ export default function Home() {
 
       <section className="flex flex-col justify-between absolute w-[100vw] h-screen left-[500vw] md:left-[400vw] lg:left-[300vw] pl-[5vw] pt-32 pb-24">
         <div>
-          <p id="talk" className="text-5xl md:text-7xl xl:text-8xl w-[90vw] text-end mb-8 font-light">
+          <p id="talk" className="text-5xl md:text-7xl xl:text-8xl w-[90vw] text-end mb-8 font-light text-slate-800">
             {'LET\'S CREATE SOMETHING AWESOME TOGETHER'}
           </p>
 
-          <p className="text-xl md:text-2xl xl:text-3xl w-[90vw] uppercase items-end font-extralight">
+          <p className="text-xl md:text-2xl xl:text-3xl w-[90vw] uppercase items-end font-extralight text-slate-800">
             {'Once you free your mind about a concept of harmony and of design being correct you can do whatever you want. Drop me an email to make your project a memorable experience.'}
           </p>
         </div>
