@@ -36,7 +36,7 @@ interface ProviderProps {
 }
 
 export function HomeBackground({ children }: ProviderProps) {
-  const [pages, setPages] = useState(0);
+  const [pages, setPages] = useState(4);
   const { isLoading, setIsLoading } = useLoading();
 
   const onLoad = useCallback(() => {
