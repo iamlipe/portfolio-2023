@@ -4,7 +4,7 @@ import { ScrollControls } from '@/contexts/ScrollControlls';
 import { useLoading } from '@/hooks/useLoading';
 import { Cloud, Preload, Sky, Text } from '@react-three/drei';
 import { Canvas, Vector3 } from '@react-three/fiber';
-import { ReactNode, Suspense, useEffect, useMemo, useState } from 'react';
+import { ReactNode, Suspense, useCallback, useEffect, useMemo, useState } from 'react';
 import { Scroll } from '../components/ui/ScrollControlls';
 
 function Clouds() {
@@ -39,23 +39,23 @@ export function HomeBackground({ children }: ProviderProps) {
   const [pages, setPages] = useState(0);
   const { isLoading, setIsLoading } = useLoading();
 
-  const onLoad = () => {
+  const onLoad = useCallback(() => {
     if (window.screen.availWidth >= 768 && window.screen.availWidth < 1024) {
-      setTimeout(() => setPages(5), 1000);
+      setPages(5);
     }
 
     if (window.screen.availWidth >= 1024) {
-      setTimeout(() => setPages(4), 1000);
+      setPages(4);
     }
 
     if (window.screen.availWidth < 768) {
-      setTimeout(() => setPages(6), 1000);
+      setPages(6);
     }
 
     setTimeout(() => { setIsLoading(false); }, 3000);
-  };
+  }, [setIsLoading]);
 
-  const resize = () => {
+  const resize = useCallback(() => {
     if (window.screen.availWidth >= 768 && window.screen.availWidth < 1024 && pages !== 5) {
       window.location.reload();
     }
@@ -67,7 +67,7 @@ export function HomeBackground({ children }: ProviderProps) {
     if (window.screen.availWidth < 768 && pages !== 6) {
       window.location.reload();
     }
-  };
+  }, [pages]);
 
   const positionAbout: Vector3 = useMemo(() => {
     if (pages === 6) return [2, -1, -10];
@@ -122,17 +122,12 @@ export function HomeBackground({ children }: ProviderProps) {
       };
     }
 
-    setTimeout(() => { setIsLoading(false); }, 3000);
-
     return undefined;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [onLoad, resize]);
 
   useEffect(() => {
-    setTimeout(() => { setIsLoading(false); }, 3000);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    if (isLoading) { setTimeout(() => { setIsLoading(false); }, 3000); }
+  }, [isLoading, setIsLoading]);
 
   if (isLoading) return null;
 
