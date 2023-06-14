@@ -122,16 +122,11 @@ export function HomeBackground({ children }: ProviderProps) {
       };
     }
 
-    setTimeout(() => { setIsLoading(false); }, 3000);
-
     return undefined;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    setTimeout(() => { setIsLoading(false); }, 3000);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  setTimeout(() => { setIsLoading(false); }, 3000);
 
   if (!pages) return null;
 
